@@ -1,11 +1,12 @@
-package chapter7.badexample;
+package chapter7.strategy1;
 
 import chapter7.Customer;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
-class CustomerRecords {
+public class CustomerRecords implements Iterable<Customer> {
     private Map<String, Customer> customerRecords;
 
     CustomerRecords() {
@@ -16,7 +17,8 @@ class CustomerRecords {
         this.customerRecords.put(customer.getName(), customer);
     }
 
-    Map<String, Customer> getCustomers() {
-        return this.customerRecords;
+    @Override
+    public Iterator<Customer> iterator() {
+        return this.customerRecords.values().iterator();
     }
 }

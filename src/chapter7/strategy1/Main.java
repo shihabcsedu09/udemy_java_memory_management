@@ -1,6 +1,8 @@
-package chapter7.badexample;
+package chapter7.strategy1;
 
 import chapter7.Customer;
+
+import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,11 +13,19 @@ public class Main {
         customerRecords.addCustomer(c1);
         customerRecords.addCustomer(c2);
 
-        customerRecords.getCustomers().clear();
 
-        for (Customer customer : customerRecords.getCustomers().values()) {
+        for (Customer customer : customerRecords) {
             System.out.println(customer.getName());
         }
+
+        Iterator<Customer> iterator = customerRecords.iterator();
+        iterator.next();
+        iterator.remove();
+
+        for (Customer customer : customerRecords) {
+            System.out.println(customer.getName());
+        }
+
 
     }
 }

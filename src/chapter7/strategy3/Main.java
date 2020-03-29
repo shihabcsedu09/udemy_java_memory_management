@@ -1,4 +1,4 @@
-package chapter7.badexample;
+package chapter7.strategy3;
 
 import chapter7.Customer;
 
@@ -10,12 +10,8 @@ public class Main {
         CustomerRecords customerRecords = new CustomerRecords();
         customerRecords.addCustomer(c1);
         customerRecords.addCustomer(c2);
-
         customerRecords.getCustomers().clear();
 
-        for (Customer customer : customerRecords.getCustomers().values()) {
-            System.out.println(customer.getName());
-        }
 
     }
 }
