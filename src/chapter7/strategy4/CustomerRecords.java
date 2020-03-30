@@ -27,7 +27,7 @@ public class CustomerRecords implements Iterable<Customer> {
     }
 
     public Customer getCustomerByName(String name) {
-        return this.customerRecords.get(name);
+        return new Customer(this.customerRecords.get(name));
     }
 
 
