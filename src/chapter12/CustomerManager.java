@@ -25,7 +25,7 @@ public class CustomerManager {
 		synchronized(customers) {
 				if (customers.size() > 0) {
 					System.out.println("Removing from queue. " + customers.get(0).toString());
-					return Optional.of(customers.remove(0));
+					return Optional.of(customers.get(0));
 				}
 		}
 		return Optional.empty();
